@@ -1,10 +1,14 @@
 var button = document.getElementById('counter');
-
+var counter = 0;
 button.onClick = function()
 {
     var request = new XMLHttpRequest();
     
-    reuest.onreadystatechange = function()
+    counter = counter + 1;
+    var span = document.getElementById('count');
+    span.innerHTML = counter.toString();
+    
+    /*reuest.onreadystatechange = function()
     {
         if(request.readyState === XMLHttpRequest.DONE)
         {
@@ -19,5 +23,5 @@ button.onClick = function()
     };
     
     request.open('GET', 'http://rsingh46.imad.hasura-app.io/counter', true);
-    request.send(null);
+    request.send(null);*/
 };
