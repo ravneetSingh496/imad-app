@@ -24,7 +24,7 @@ button.onclick = function()
 };
 
 var submit = document.getElementById('submit_btn');
-submit.onclick = funtion()
+submit.onclick = function()
 {
     var names = ['name1', 'name2', 'name3','name4'];   
     var list = "";
@@ -33,5 +33,5 @@ submit.onclick = funtion()
         list += '<li>' + names[index] + '</li>';
     }
     var ul = document.getElementById('namelist');
-    ul.innerHTML = list;
-}
+    ul.innerHTML = list; 
+};
