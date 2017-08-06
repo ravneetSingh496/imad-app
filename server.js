@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articales = 
+var articles = 
 {
     'article-one':
     {
