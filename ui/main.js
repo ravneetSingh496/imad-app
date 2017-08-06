@@ -44,7 +44,7 @@ submit.onclick = function()
     };
     
     var nameInput = document.getElementById('name');
-    var name1 = nameInput.value;
-    request.open('GET', 'http://rsingh46.imad.hasura-app.io/submit-name?name=' + name1, true);
+    var name = nameInput.value;
+    request.open('GET', 'http://rsingh46.imad.hasura-app.io/submit-name?name=' + name, true);
     request.send(null);  
 };
