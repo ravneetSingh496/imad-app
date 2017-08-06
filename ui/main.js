@@ -26,11 +26,10 @@ submit.onclick = function()
 {
     console.log('Inside submit request');
     var request = new XMLHttpRequest();
-    reuest.onreadystatechange = function()
-    {
-        if(request.readyState === XMLHttpRequest.DONE)
+    request.onreadystatechange = function(){
+        if(request.readyState === XMLHttpRequest)
         {
-            if(request.status === 200)
+            if(request.status === 304)
             {
                 var names = request.responseText;
                 names = JSON.parse(names);
