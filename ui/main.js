@@ -1,6 +1,7 @@
 var button = document.getElementById('counter');
 button.onclick = function()
 {
+    console.log('Inside button request');
     var request = new XMLHttpRequest();
     reuest.onreadystatechange = function()
     {
@@ -24,6 +25,7 @@ var name1 = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onclick = function()
 {
+    console.log('Inside submit request');
     var request = new XMLHttpRequest();
     reuest.onreadystatechange = function()
     {
