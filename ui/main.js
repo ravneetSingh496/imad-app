@@ -16,7 +16,7 @@ button.onclick = function()
         }
     };
     
-    request.open("GET", "http://rsingh46.imad.hasura-app.io/counter", true);
+    request.open('GET', 'http://rsingh46.imad.hasura-app.io/counter', true);
     request.send(null);   
 };
 
@@ -46,6 +46,6 @@ submit.onclick = function()
         }
     };
     
-    request.open("GET", "http://rsingh46.imad.hasura-app.io/submit-name?name=" + name1, true);
+    request.open('GET', 'http://rsingh46.imad.hasura-app.io/submit-name?name=' + name1, true);
     request.send(null);  
 };
