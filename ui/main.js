@@ -31,7 +31,8 @@ submit.onclick = function()
         {
             if(request.status === 304)
             {
-                var names = ['name1', 'name2', 'name3','name4'];   
+                var names = request.responseText;
+                names = JSON.parse(names);
                 var list = "";
                 for (var index = 0; index < names.length; index++)
                 {
