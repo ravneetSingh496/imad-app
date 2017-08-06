@@ -29,7 +29,7 @@ submit.onclick = function()
     {
         if(request.readyState === XMLHttpRequest.DONE)
         {
-            if(request.status === 304)
+            if(request.status === 200)
             {
                 var names = request.responseText;
                 names = JSON.parse(names);
