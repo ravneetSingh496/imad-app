@@ -14,7 +14,6 @@ button.onclick = function()
                 span.innerHTML = counter.toString();
             }
         }
-        
     };
     
     request.open('GET', 'http://rsingh46.imad.hasura-app.io/counter', true);
