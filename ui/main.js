@@ -1,7 +1,6 @@
 var button = document.getElementById('counter');
 button.onclick = function()
 {
-    console.log('Inside button request');
     var request = new XMLHttpRequest();
     request.onreadystatechange = function(){
         if(request.readyState === XMLHttpRequest.DONE)
@@ -32,6 +31,7 @@ submit.onclick = function()
             {
                 var names = request.responseText;
                 names = JSON.parse(names);
+                console.log(names);
                 var list = "";
                 for (var index = 0; index < names.length; index++)
                 {
