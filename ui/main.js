@@ -3,8 +3,7 @@ button.onclick = function()
 {
     console.log('Inside button request');
     var request = new XMLHttpRequest();
-    reuest.onreadystatechange = function()
-    {
+    request.onreadystatechange = function(){
         if(request.readyState === XMLHttpRequest.DONE)
         {
             if(request.status === 304)
@@ -15,7 +14,7 @@ button.onclick = function()
             }
         }
     };
-    
+
     request.open('GET', 'http://rsingh46.imad.hasura-app.io/counter', true);
     request.send(null);   
 };
