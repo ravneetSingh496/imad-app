@@ -15,67 +15,6 @@ var config =
 var app = express();
 app.use(morgan('combined'));
 
-var articles = 
-{
-    'article-one':
-    {
-        title: 'Article One | Ravneet Singh',
-        heading: 'Article One',
-        date: 'August 5th 2017',
-        content:`   <p>
-                        This is the content of first article. First paragraph.
-                    </p>
-                    <p>
-                        This is the content of first article. Second paragraph.
-                    </p>
-                    <p>
-                        This is the content of first article. Third paragraph.
-                    </p>
-                    <p>
-                        This is the content of first article. Fourth paragraph.
-                    </p>`
-        
-    },
-    'article-two':
-    {
-        title: 'Article Two | Ravneet Singh',
-        heading: 'Article Two',
-        date: 'August 5th 2017',
-        content:`   <p>
-                        This is the content of second article. First paragraph.
-                    </p>
-                    <p>
-                        This is the content of second article. Second paragraph.
-                    </p>
-                    <p>
-                        This is the content of second article. Third paragraph.
-                    </p>
-                    <p>
-                        This is the content of second article. Fourth paragraph.
-                    </p>`
-        
-    },
-    'article-three':
-    {
-        title: 'Article Three | Ravneet Singh',
-        heading: 'Article Three',
-        date: 'August 5th 2017',
-        content:`   <p>
-                        This is the content of third article. First paragraph.
-                    </p>
-                    <p>
-                        This is the content of third article. Second paragraph.
-                    </p>
-                    <p>
-                        This is the content of third article. Third paragraph.
-                    </p>
-                    <p>
-                        This is the content of third article. Fourth paragraph.
-                    </p>`
-        
-    }
-};
-
 function createTemplate (data)
 {
     var title = data.title;
