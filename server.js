@@ -149,7 +149,7 @@ app.get('/submit-name', function (req, res) {//URL: ...submit-name?name=xx in en
 
 app.get('/articles/:articleName', function (req, res)
 {
-    pool.query("SELECT * FROM article where title="+ req.params.articleName, function(err, result)
+    pool.query("SELECT * FROM article where title= '"+ req.params.articleName + "'", function(err, result)
     {
         if(err)
         {
