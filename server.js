@@ -53,6 +53,12 @@ function createTemplate (data)
     return htmlTemplate;
 }
 
+
+app.get('/hash/:input', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
+
 function hash(input, salt)
 {
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
@@ -63,11 +69,6 @@ app.get('/', function (req, res) {
     var hashedString = hash(req.params.input, 'random-string');
   res.send(hashedString);
 });
-
-app.get('/hash/:input', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
-
 
 var pool = new pool(config);
 app.get('/test-db',function(req,res)
