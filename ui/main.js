@@ -1,22 +1,4 @@
-var button = document.getElementById('counter');
-button.onclick = function()
-{
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function(){
-        if(request.readyState === XMLHttpRequest.DONE)
-        {
-            if(request.status === 200)
-            {
-                var counter = request.responseText;
-                var span = document.getElementById('count');
-                span.innerHTML = counter.toString();
-            }
-        }
-    };
-
-    request.open('GET', 'http://rsingh46.imad.hasura-app.io/counter', true);
-    request.send(null);   
-};
+//Submit Username/Password
 
 
 var submit = document.getElementById('submit_btn');
@@ -29,22 +11,25 @@ submit.onclick = function()
         {
             if(request.status === 200)
             {
-                var names = request.responseText;
-                names = JSON.parse(names);
-                console.log(names);
-                var list = "";
-                for (var index = 0; index < names.length; index++)
-                {
-                    list += '<li>' + names[index] + '</li>';
-                }
-                var ul = document.getElementById('namelist');
-                ul.innerHTML = list; 
+                console.log('User Logged in!');
+                alert('Logged in Successfully!');
+            }
+            else if(request.status === 403)
+            {
+                alert('Username / Password is INCORRECT!');
+            }
+            else if(request.status === 500)
+            {
+                alert('Something Went WRONG on the server!!');
             }
         }
     };
     
-    var nameInput = document.getElementById('name');
-    var name = nameInput.value;
-    request.open('GET', 'http://rsingh46.imad.hasura-app.io/submit-name?name=' + name, true);
-    request.send(null);  
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    console.log(username);
+    console.log(password);
+    request.open('POST', 'http://rsingh46.imad.hasura-app.io/login', true);
+    request.setRequestHeader('Content-Type','application/json');
+    request.send(JSON.stringify({username: username, password: password}));  
 };
