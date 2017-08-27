@@ -54,7 +54,7 @@ function createTemplate (data)
 }
 
 
-app.get('/hash/:input', function (req, res) {
+app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
@@ -65,7 +65,7 @@ function hash(input, salt)
     return hashed.toString('hex');
 }
 
-app.get('/', function (req, res) {
+app.get('/hash/:input', function (req, res) {
     var hashedString = hash(req.params.input, 'random-string');
   res.send(hashedString);
 });
